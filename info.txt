@@ -1,0 +1,160 @@
+expressjs — Expressjs is a nodejs web application framework that gives us the ability to create quick and easy APIs.
+PG— PG is a NodeJs package for interfacing with the PostgreSQL database.
+JSON Web Token (JWT)— is an open standard for securely transmitting information between parties as a JSON object. It’s pronounced jot, or as our Dutch friends would say, yaywaytay. JWT is commonly used for authorization. JWTs can be signed using a secret or a public/private key pair. Once a user is logged in, each subsequent request will require the JWT, allowing the user to access routes, services, and resources that are permitted with that token.
+Body Parser — Parse incoming request bodies in a middleware before your handlers, available under the req.body property.
+Moment — Is a lightweight JavaScript date library for parsing, validating, manipulating, and formatting dates.
+Dotenv — Is a zero-dependency module that loads environment variables from a .env file into process.env
+CORS (Cross Origin Resource Sharing) — Is a node.js package that allows requests to skip the Same-origin policy and access resources from remote hosts.
+Bcryptjs — is a secured way to help you hash passwords.
+@babel/polyfill — is a toolchain that is mainly used to convert ECMAScript 2015+ code into a backwards compatible version of JavaScript in current and older browsers or environments.
+babel watch — This is needed for development. One thing that babel watch package does is to compile our code and reload the server each time we make changes to our code.
+
+
+
+# create a new directory
+mkdir app-backend
+
+# change to the newly-created directory
+cd app-backend
+
+$ node -v > .nvmrc
+
+# initialize a new Node.js project
+npm init -y
+
+touch README.md
+
+touch .editorconfig
+
+# initialize the project folder as a git repository
+git init
+
+touch .gitignore
+
+# install the express generator globally
+sudo npm install express-generator -g
+
+# install express
+npm i --save express
+
+# generate the express project in the current folder
+express -f --no-view --git
+
+   install dependencies:
+     $ npm install
+
+   run the app:
+     $ DEBUG=app-backend-2:* npm start
+
+rm -rf public
+
+rename bin/www to bin/www.js
+
+├── node_modules
+├── src
+|   ├── bin
+│   │   ├── www.js
+│   ├── routes
+│   |   ├── index.js
+│   └── app.js
+├── .editorconfig
+├── .gitignore
+├── package.json
+├── package-lock.json
+├── README.md
+
+
+$ npm install --save-dev nodemon
+
+$ touch nodemon.json
+
+# install elsint and prettier
+npm install --save-dev eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin
+npm install --save-dev prettier eslint-config-prettier eslint-plugin-prettier
+npm install eslint-config-airbnb-typescript --save-dev
+npm install eslint-plugin-import@^2.22.0 \
+            @typescript-eslint/eslint-plugin@^4.4.1 \
+            --save-dev
+
+$ touch .eslintrc
+
+$ touch .prettierrc
+
+$ touch .eslintignore
+
+$ touch .env
+$ touch .env_example
+
+# install dotenv
+npm install --save dotenv
+
+npm install --save http-errors
+
+
+# TESTS - install dependencies
+npm install --save-dev mocha chai nyc sinon-chai supertest coveralls faker sinon chai-as-promised
+
+mocha	test runner
+chai	used to make assertions
+nyc	collect test coverage report
+sinon-chai	extends chai’s assertions
+supertest	used to make HTTP calls to our API endpoints
+coveralls	for uploading test coverage to coveralls.io
+
+mkdir test
+touch test/setup.js
+touch test/index.test.js
+
+
+mkdir src/controllers
+
+
+# install node-postgres
+npm install --save pg
+
+$ mkidr src/models
+
+$ mkdir src/utils
+
+$ mkdir src/middleware
+
+$ npm install --save express pg moment body-parser dotenv jsonwebtoken cors make-runnable bcryptjs uuid helmet axios 
+
+$ npm install --save sequelize
+
+$ npm install --save pg-hstore
+
+$ npm install --save-dev sequelize-cli
+
+$ touch .sequelizerc
+$ npx sequelize-cli init
+
+$ npx sequelize-cli model:generate --name User --attributes email:string,first_name:string,last_name:string,password:string,is_admin:boolean
+$ npx sequelize-cli model:generate --name Item --attributes name:string,unit_price:decimal
+$ npx sequelize-cli model:generate --name Order --attributes user_id:uuid,order_date:date,total_price:decimal
+$ npx sequelize-cli model:generate --name OrderItem --attributes order_id:uuid,item_id:uuid,quantity:integer
+
+$ sequelize db:migrate
+
+$ npx sequelize-cli seed:generate --name user
+
+require('crypto').randomBytes(64).toString('hex')
+
+$ npm i typescript @types/node ts-node @types/validator -D
+$ tsc --init
+
+$ npm i --save-dev @types/debug @types/pg @types/jsonwebtoken @types/bcryptjs
+
+$ npm i --save-dev @types/express @types/morgan @types/cookie-parser @types/cors @types/http-errors
+$ npm i --save-dev @types/mocha @types/chai
+$ npm i --save-dev @types/supertest @types/sinon-chai @types/faker @types/sinon @types/chai-as-promised
+
+
+--$ sudo -u postgres psql
+--$ sudo psql -U demorole # To log in as another user, quit the prompt (\q) and then use the command
+--$ sudo psql -U demorole -d demorole # connect directly to a database
+-- # To change user:
+-- \c - a_new_user
+
+-- # To change database and user:
+-- \c a_new_database a_new_user
